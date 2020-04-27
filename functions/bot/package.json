@@ -1,17 +1,18 @@
 {
     "name": "dynamix-telegram-bot",
     "version": "0.0.1",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:juliolpiva/dynamix-telegram-bot.git"
-    },
     "license": "MIT",
     "description": "dynamix community telegram bot",
-    "main": "index.js",
+    "main": "bot.js",
     "author": "JulioLP",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node bot.js"
       },
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "telebot": "^1.3.0"
+    },
     "engines": {
         "node": ">=12.0.0"
     }
