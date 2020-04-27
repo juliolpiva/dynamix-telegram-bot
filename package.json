@@ -1,0 +1,12 @@
+{
+  "name": "dynamix-telegram-bot",
+  "version": "0.0.1",
+  "description": "dynamix community telegram bot",
+  "main": "index.js",
+  "repository": "git@github.com:juliolpiva/dynamix-telegram-bot.git",
+  "author": "JulioLP",
+  "license": "MIT",
+  "dependencies": {
+    "telebot": "^1.3.0"
+  }
+}
