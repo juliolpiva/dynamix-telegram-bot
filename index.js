@@ -1,4 +1,7 @@
-import TeleBot from 'telebot';
+const dotenv = require('dotenv');
+const TeleBot = require('telebot');
+
+dotenv.config();
 
 const bot = new TeleBot(process.env.BOT_TOKEN);
 
@@ -7,11 +10,12 @@ bot.on(['*', '/*'], (msg, self) => {
 
     let id = msg.from.id;
     let replyToMessage = msg.message_id;
-    let type = self.type;
     let parseMode = 'html';
 
+    const isDaniel = msg.text.toLowerCase() === 'daniel';
+
     return bot.sendMessage(
-        id, `This is a <b>${ type }</b> message.`, {replyToMessage, parseMode}
+        id, `Vamos mudar de assunto galera! brinks`, {replyToMessage, parseMode}
     );
 });
 
