@@ -1,27 +1,14 @@
+const Telegraf = require('telegraf');
 const dotenv = require('dotenv');
-const TeleBot = require('telebot');
 
 dotenv.config();
 
-const bot = new TeleBot(process.env.BOT_TOKEN);
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
-// On every type of message (& command)
-bot.on(['*', '/*'], (msg, self) => {
+bot.command('oldschool', (ctx) => ctx.reply('Hello'))
 
-    const id = msg.from.id;
-    const fromName = msg.from.first_name;
-    const replyToMessage = msg.message_id;
-    const parseMode = 'html';
+bot.command('modern', ({ reply }) => reply('Yo'))
 
-    const isDaniel = msg.text.toLowerCase() === 'daniel';
+bot.command('hipster', Telegraf.reply('λ'))
 
-    console.log("Group Message:", msg.text, " | From:", fromName);
-
-    if(isDaniel) {
-        return bot.sendMessage(
-            id, `Vamos mudar de assunto galera! brinks`, {replyToMessage, parseMode}
-        );
-    }
-});
-
-bot.start();
+bot.launch()
