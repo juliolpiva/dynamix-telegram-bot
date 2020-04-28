@@ -13,11 +13,11 @@ bot.use(async (ctx, next) => {
 
     console.log('Message:', message, ' | From:', user);
 
-    if (message.toLowerCase() === 'amarelo') {
+    if (message.toLowerCase().includes('amarelo')) {
         ctx.reply('IIIIH TOMOU AMARELO!')
     }
 
-    if (message.toLowerCase() === 'vermelho') {
+    if (message.toLowerCase().includes('vermelho')) {
         ctx.reply('PESADO, TA EXPULSO!!')
     }
 
