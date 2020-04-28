@@ -16,7 +16,7 @@ bot.use(async (ctx, next) => {
     console.log('Message:', message, ' | From:', user);
 
     if (message && message.toLowerCase().includes('help')) {
-        ctx.reply('Cara, não seja noob, usa /amarelo ou /vermelho, não tem mistério!')
+        ctx.reply('Cara, não seja noob, usa /amarelo ou /vermelho, não tem mistério! e deixa de ser vadio e ajuda no projeto!')
     }
 
     if (message && message.toLowerCase().includes('amarelo')) {
