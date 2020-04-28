@@ -15,16 +15,19 @@ bot.use(async (ctx, next) => {
 
     console.log('Message:', message, ' | From:', user);
 
-    if (message.toLowerCase().includes('amarelo')) {
+    if (message && message.toLowerCase().includes('help')) {
+        ctx.reply('Cara, não seja noob, usa /amarelo ou /vermelho, não tem mistério!')
+    }
+
+    if (message && message.toLowerCase().includes('amarelo')) {
         ctx.reply('IIIIH TOMOU AMARELO!')
     }
 
-    if (message.toLowerCase().includes('vermelho')) {
+    if (message && message.toLowerCase().includes('vermelho')) {
         ctx.reply('PESADO, TA EXPULSO!!')
     }
 
-
-    if (message.toLowerCase().includes('matias')) {
+    if (message && message.toLowerCase().includes('matias')) {
         ctx.reply('ARGENTINO');
     }
 
