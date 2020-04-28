@@ -11,6 +11,8 @@ bot.use(async (ctx, next) => {
     const message = ctx.update.message.text;
     const user = ctx.update.message.chat.first_name;
 
+    console.log(ctx);
+
     console.log('Message:', message, ' | From:', user);
 
     if (message.toLowerCase().includes('amarelo')) {
@@ -19,6 +21,11 @@ bot.use(async (ctx, next) => {
 
     if (message.toLowerCase().includes('vermelho')) {
         ctx.reply('PESADO, TA EXPULSO!!')
+    }
+
+
+    if (message.toLowerCase().includes('matias')) {
+        ctx.reply('ARGENTINO');
     }
 
     await next()
