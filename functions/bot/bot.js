@@ -5,28 +5,50 @@ dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
-bot.start(ctx => {
-    ctx.reply('Bem vindo caro amigo, use /help para mais informações!')
+bot.start(async ctx => {
+    try {
+        return ctx.reply('Bem vindo caro amigo, use /help para mais informações!')
+    } catch (error) {
+        console.log(e)
+    }
 });
 
-bot.command('amarelo', ctx => {
-    console.log('amarelo', ctx);
+bot.command('amarelo', async ctx => {
+    try {
+        console.log('amarelo', ctx);
 
-    ctx.reply('IIIIH TOMOU AMARELO!')
+        return ctx.reply('IIIIH TOMOU AMARELO!')
+    } catch (error) {
+        console.log(e)
+    }
 });
 
-bot.command('vermelho', ctx => {
-    console.log('vermelho', ctx);
+bot.command('vermelho', async ctx => {
+    try {
+        console.log('vermelho', ctx);
 
-    ctx.reply('PESADO, TA EXPULSO!!')
+        return ctx.reply('PESADO, TA EXPULSO!!')
+    } catch (error) {
+        console.log(e)
+    }
 });
 
-bot.command('help', ctx => {
-    ctx.reply('Cara, não seja noob, usa /amarelo ou /vermelho, não tem mistério! e deixa de ser vadio e ajuda no projeto!')
+bot.command('help', async ctx => {
+    try {
+        console.log('help', ctx);
+
+        return ctx.reply('Cara, não seja noob, usa /amarelo ou /vermelho, não tem mistério! e deixa de ser vadio e ajuda no projeto!')
+    } catch (error) {
+        console.log(e)
+    }
 });
 
-bot.on(ctx => {
-    console.log('on', ctx);
+bot.use(ctx => {
+    try {
+        console.log('on', ctx);
+    } catch (error) {
+        console.log(e)
+    }
 });
 
 bot.launch();
