@@ -5,10 +5,27 @@ dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
-bot.command('oldschool', (ctx) => ctx.reply('Hello'))
+bot.use(async (ctx, next) => {
+    const start = new Date()
 
-bot.command('modern', ({ reply }) => reply('Yo'))
+    const message = ctx.update.message.text;
+    const user = ctx.update.message.chat.first_name;
 
-bot.command('hipster', Telegraf.reply('λ'))
+    console.log('Message:', message, ' | From:', user);
 
-bot.launch()
+    if (message.toLowerCase() === 'amarelo') {
+        ctx.reply('IIIIH TOMOU AMARELO!')
+    }
+
+    if (message.toLowerCase() === 'vermelho') {
+        ctx.reply('PESADO, TA EXPULSO!!')
+    }
+
+    await next()
+
+    const ms = new Date() - start
+
+    console.log('Response time: %sms', ms)
+  })
+
+  bot.launch()
